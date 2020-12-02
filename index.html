@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>BoolFlix</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <div id="root">
+         <header>
+            <div class="searchbox">
+               <input v-model="userInput" type="text">
+               <button @click="search" type="button" name="button">Cerca</button>
+            </div>
+         </header>
+         <main>
+            <div v-for="film in films" class="card">
+               <div class="card-info">
+                  <img :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="">
+                  <h1>Titolo: {{film.title}}</h1>
+                  <h2>Titolo originale: {{film.original_title}}</h2>
+                  <h2>Lingua: {{film.original_language}}<h2>
+                  <h2>Voto: {{film.vote_average}}<h2>
+               </div>
+         </main>
+      </div>
+   <script src="js/main.js"></script>
+   </body>
+</html>
