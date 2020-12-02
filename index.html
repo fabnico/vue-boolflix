@@ -19,12 +19,13 @@
          <main>
             <div v-for="film in films" class="card">
                <div class="card-info">
-                  <img :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="">
-                  <h1>Titolo: {{film.title}}</h1>
-                  <h2>Titolo originale: {{film.original_title}}</h2>
-                  <h2>Lingua: {{film.original_language}}<h2>
-                  <h2>Voto: {{film.vote_average}}<h2>
+                  <img :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="Cover film">
+                  <span>Titolo: {{film.title}}</span>
+                  <span>Titolo originale: {{film.original_title}}</span>
+                  <span>Lingua: {{film.original_language}}</span>
+                  <span>Voto: {{film.vote_average}}</span>
                </div>
+            </div>
          </main>
       </div>
    <script src="js/main.js"></script>
