@@ -1,3 +1,4 @@
+
 const app = new Vue({
    el: '#root',
    data: {
@@ -7,14 +8,19 @@ const app = new Vue({
    },
    methods:{
       search: function(){
-         axios.get('https://api.themoviedb.org/3/search/movie',
+         let a = axios.get('https://api.themoviedb.org/3/search/movie',
       {
          params: {
             api_key: this.myAPI,
             query: this.userInput
          }
       })
-         .then(result => this.films = result.data.results);
+         .then(result => {
+         this.films = result.data.results;
+         this.films.forEach(e => {e.vote_average = Math.ceil(e.vote_average / 2);
+         e.star = 5 - e.vote_average;
+            })
+         })
       }
-   },
+   }
 })
