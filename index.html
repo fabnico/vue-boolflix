@@ -23,23 +23,21 @@
                   <img :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="Cover film">
                   <span>Titolo: {{film.title}}</span>
                   <span>Titolo originale: {{film.original_title}}</span>
-                  <span>Lingua: <img :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua" @error="flagError(i)"></span>
+                  <span>Lingua: <img v-if="" :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua" @error="flagError(film)"></span>
                   <span> Voto:
-                     <template v-for="vote in film.vote_average"><i class="fa fa-star" aria-hidden="true"></i>
-                     </template><template v-if="film.vote_average < 5" v-for="value in film.star"><i class="fa fa-star-o" aria-hidden="true"></i>
+                     <template v-for="vote in starCounter(film)"><i class="fa fa-star" aria-hidden="true"></i></template><template v-for="vote in (5 -starCounter(film))"><i class="fa fa-star-o" aria-hidden="true"></i>
                      </template>
                   </span>
                </div>
             </div>
-            <div v-for="serie,i in tvSeries" class="card">
+            <div v-for="tv,i in tvSeries" class="card">
                <div class="card-info">
-                  <img :src="'https://image.tmdb.org/t/p/w200'+ serie.poster_path" alt="Cover serie">
-                  <span>Titolo: {{serie.name}}</span>
-                  <span>Titolo originale: {{serie.original_name}}</span>
-                  <span>Lingua: <img :src="'img/svg/'+serie.original_language+'.svg'" alt="Bandiera lingua" @error="flagError(i)"></span>
+                  <img :src="'https://image.tmdb.org/t/p/w200'+ tv.poster_path" alt="Cover Serie TV">
+                  <span>Titolo: {{tv.name}}</span>
+                  <span>Titolo originale: {{tv.original_name}}</span>
+                  <span>Lingua: <img v-if="" :src="'img/svg/'+tv.original_language+'.svg'" alt="Bandiera lingua" @error="flagError(tv)"></span>
                   <span> Voto:
-                     <template v-for="vote in serie.vote_average"><i class="fa fa-star" aria-hidden="true"></i>
-                     </template><template v-if="serie.vote_average < 5" v-for="value in serie.star"><i class="fa fa-star-o" aria-hidden="true"></i>
+                     <template v-for="vote in starCounter(tv)"><i class="fa fa-star" aria-hidden="true"></i></template><template v-for="vote in (5 -starCounter(tv))"><i class="fa fa-star-o" aria-hidden="true"></i>
                      </template>
                   </span>
                </div>
