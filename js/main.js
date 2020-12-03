@@ -39,7 +39,6 @@ const app = new Vue({
       },
       flagError: function(i){
          this.films[i].original_language = 'flag_404';
-         this.tvSeries[i].original_language = 'flag_404';
       },
    }
 })
