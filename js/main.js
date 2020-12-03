@@ -1,10 +1,12 @@
 
+
 const app = new Vue({
    el: '#root',
    data: {
       myAPI: '18d96878a8e77682ff38f707ebc18bb0',
       films: [],
-      userInput: ''
+      userInput: '',
+
    },
    methods:{
       search: function(){

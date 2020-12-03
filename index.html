@@ -23,7 +23,7 @@
                   <img :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="Cover film">
                   <span>Titolo: {{film.title}}</span>
                   <span>Titolo originale: {{film.original_title}}</span>
-                  <span>Lingua: {{film.original_language}}</span>
+                  <span>Lingua: <img :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua"></span>
                   <span> Voto:
                      <template v-for="vote in film.vote_average"><i class="fa fa-star" aria-hidden="true"></i>
                      </template><template v-if="film.vote_average < 5" v-for="value in film.star"><i class="fa fa-star-o" aria-hidden="true"></i>
@@ -33,6 +33,6 @@
             </div>
          </main>
       </div>
-   <script src="js/main.js"></script>
+      <script src="js/main.js"></script>
    </body>
 </html>
