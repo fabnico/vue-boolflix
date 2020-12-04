@@ -13,8 +13,11 @@ const app = new Vue({
          axios.get('https://api.themoviedb.org/3/search/tv',
             {params: {api_key: this.myAPI, query: this.userInput}}).then(result => this.tvSeries = result.data.results)
       },
-      flagError: function(media){
-         media.original_language = 'flag_404';
+      flagError: function(event){
+         event.target.src = 'img/svg/flag_404.svg';
+      },
+      imgError: function(event){
+         event.target.src = 'img/notfound.jpg'
       },
       starCounter: function(media){
          let vote = Math.ceil(media.vote_average / 2);
