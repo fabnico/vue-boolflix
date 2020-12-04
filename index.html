@@ -12,15 +12,15 @@
    <body>
       <div id="root">
          <header>
+            <span>BoolFlix</span>
             <div class="searchbox">
-               <input v-model="userInput" type="text">
-               <button @click="search" type="button" name="button">Cerca</button>
+               <input @keydown.enter="search" v-model="userInput" type="text">
             </div>
          </header>
          <main>
             <div v-for="film,i in films" class="card">
                <div class="card-info">
-                  <img @error="imgError" :src="'https://image.tmdb.org/t/p/w200'+ film.poster_path" alt="Cover film">
+                  <img @error="imgError" :src="'https://image.tmdb.org/t/p/w342'+ film.poster_path" alt="Cover film">
                   <span>Titolo: {{film.title}}</span>
                   <span>Titolo originale: {{film.original_title}}</span>
                   <span>Lingua: <img v-if="" :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua" @error="flagError"></span>

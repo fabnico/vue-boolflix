@@ -5,15 +5,26 @@
 }
 
 #root{
-   background-color: blue;
+   background-color: #1B1B1D;
 }
 
 header{
-   background-color: lightblue;
+   background-color: #1B1B1D;
    height: 100px;
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
    align-items: center;
+}
+
+header > span{
+   font-size: 30px;
+   color: orange;
+}
+
+.searchbox input{
+   padding: 5px 10px;
+   border-radius: 5px;
+   outline: none;
 }
 
 main{
@@ -27,8 +38,12 @@ main{
 }
 
 .card{
-   flex-basis: calc(100% / 6);
+   flex-basis: calc(100% / 6 - 20px);
    margin-bottom: 10px;
+   background-color: black;
+   margin: 10px;
+   border-radius: 10px;
+   padding: 20px 10px;
 }
 
 .card-info{
@@ -36,6 +51,13 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
+
+.card-info > img{
+   max-height: 300px;
+   border-radius: 10px;
+   margin-bottom: 10px;
+}
+
 
 .card-info span img{
    width: 30px;
