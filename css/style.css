@@ -73,4 +73,5 @@ main{
 
 .card:hover .card-info{
    display: flex;
+   overflow-y: auto;
 }
