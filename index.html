@@ -25,7 +25,7 @@
                <div class="card-info">
                   <span id="a">Titolo: {{film.title}}</span>
                   <span>Titolo originale: {{film.original_title}}</span>
-                  <span>Lingua: <img v-if="" :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua" @error="flagError"></span>
+                  <span>Lingua: <img :src="'img/svg/'+film.original_language+'.svg'" alt="Bandiera lingua" @error="flagError"></span>
                   <span> Voto:
                      <template v-for="vote in starCounter(film)"><i class="fa fa-star" aria-hidden="true"></i></template><template v-for="vote in (5 - starCounter(film))"><i class="fa fa-star-o" aria-hidden="true"></i>
                      </template>
@@ -40,7 +40,7 @@
                <div class="card-info">
                   <span>Titolo: {{tv.name}}</span>
                   <span>Titolo originale: {{tv.original_name}}</span>
-                  <span>Lingua: <img v-if="" :src="'img/svg/'+tv.original_language+'.svg'" alt="Bandiera lingua" @error="flagError"></span>
+                  <span>Lingua: <img :src="'img/svg/'+tv.original_language+'.svg'" alt="Bandiera lingua" @error="flagError"></span>
                   <span> Voto:
                      <template v-for="vote in starCounter(tv)"><i class="fa fa-star" aria-hidden="true"></i></template><template v-for="vote in (5 - starCounter(tv))"><i class="fa fa-star-o" aria-hidden="true"></i>
                      </template>
